@@ -97,7 +97,7 @@ class AddEditTableViewController: UITableViewController {
         if segue.identifier == "saveUnwind"{
             let titre = titreTF.text ?? ""
             let contenu = contentTF.text ?? ""
-            self.note = Note(titre: titre, contenu: contenu, dateCrea: "", localisation: "")
+            self.note = Note(titre: titre, contenu: contenu, localisation: "")
         }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.

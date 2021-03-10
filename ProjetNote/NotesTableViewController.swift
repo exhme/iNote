@@ -8,14 +8,13 @@
 import UIKit
 
 class NotesTableViewController: UITableViewController {
-    let dateFormatter=DateFormatter();
     var notes:[Note]=[
-        Note(titre: "Titre1", contenu: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", dateCrea: "", localisation: "Domblans"),Note(titre: "Titre2", contenu: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", dateCrea: "", localisation: "Domblans")
+        Note(titre: "Titre1", contenu: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", localisation: "Domblans"),Note(titre: "Titre2", contenu: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", localisation: "Domblans")
     ];
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -42,8 +41,12 @@ class NotesTableViewController: UITableViewController {
 
        //  Configure the cell...
         let note = notes[indexPath.row]
+        let french = DateFormatter()
+        french.dateStyle = .medium
+        french.timeStyle = .medium
+        french.locale = Locale(identifier: "FR-fr")
         cell.textLabel?.text = note.titre
-        cell.detailTextLabel?.text="15/02/2001"
+        cell.detailTextLabel?.text=french.string(from: notes[indexPath.row].dateCrea)
         return cell
     }
     
@@ -88,6 +91,7 @@ class NotesTableViewController: UITableViewController {
             if let note = sourceVC.note{
                 if let selectedIndexPath = tableView.indexPathForSelectedRow{
                     // edit ici
+                    note.dateCrea=Date()
                     self.notes[selectedIndexPath.row]=note
                     tableView.reloadData()
                 }
