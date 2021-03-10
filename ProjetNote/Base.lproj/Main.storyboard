@@ -69,7 +69,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="sqY-yH-mCh"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="FqT-nx-M2p">
                             <connections>
-                                <segue destination="8gv-0P-RfE" kind="presentation" identifier="addNote" id="dbH-Ra-NAZ"/>
+                                <segue destination="8gv-0P-RfE" kind="presentation" identifier="AddNote" id="dbH-Ra-NAZ"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -146,6 +146,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Bhd-bF-qSF"/>
+                    <connections>
+                        <outlet property="contentTF" destination="RLh-ga-gfZ" id="GKg-yX-yId"/>
+                        <outlet property="titreTF" destination="AA6-mZ-AzJ" id="eca-Yp-jFY"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXJ-Co-IDi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,7 +193,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="idu-X5-1HI"/>
+        <segue reference="dbH-Ra-NAZ"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

@@ -92,7 +92,20 @@ class NotesTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("from edit")
+        
+        if segue.identifier == "EditNote"{
+            print("bonjourEdit")
+            let indexPath = tableView.indexPathForSelectedRow!
+            let note = notes[indexPath.row]
+            let navigationController = segue.destination as! UINavigationController
+            let addEditController = navigationController.topViewController as! AddEditTableViewController
+            addEditController.note=note
+
+            
+        }
+        if segue.identifier == "AddNote" {
+            print("bonjourAdd")
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }

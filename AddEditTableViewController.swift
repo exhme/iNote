@@ -8,9 +8,17 @@
 import UIKit
 
 class AddEditTableViewController: UITableViewController {
-
+    @IBOutlet weak var titreTF: UITextField!
+    @IBOutlet weak var contentTF: UITextField!
+    var note:Note?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let note = note{
+            titreTF.text=note.titre
+            contentTF.text=note.contenu
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -24,12 +32,12 @@ class AddEditTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
     /*
