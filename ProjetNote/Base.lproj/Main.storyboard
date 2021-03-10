@@ -120,7 +120,7 @@
                                                     <rect key="frame" x="20" y="11" width="374" height="203"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -145,7 +145,10 @@
                             <outlet property="delegate" destination="ohe-RP-B87" id="egm-EC-P6h"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Bhd-bF-qSF"/>
+                    <navigationItem key="navigationItem" id="Bhd-bF-qSF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fgY-3k-BFP"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="nWG-kO-kGk"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="contentTF" destination="RLh-ga-gfZ" id="GKg-yX-yId"/>
                         <outlet property="titreTF" destination="AA6-mZ-AzJ" id="eca-Yp-jFY"/>
