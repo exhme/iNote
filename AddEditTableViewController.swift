@@ -7,9 +7,13 @@
 
 import UIKit
 
+
+
+
 class AddEditTableViewController: UITableViewController {
     @IBOutlet weak var titreTF: UITextField!
     @IBOutlet weak var contentTF: UITextField!
+    
     var note:Note?
     
     override func viewDidLoad() {
@@ -19,6 +23,9 @@ class AddEditTableViewController: UITableViewController {
             titreTF.text=note.titre
             contentTF.text=note.contenu
         }
+
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
