@@ -66,7 +66,7 @@ class AddEditTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -84,15 +84,24 @@ class AddEditTableViewController: UITableViewController {
         return true
     }
     */
+    
+    
 
-    /*
+
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "saveUnwind"{
+            let titre = titreTF.text ?? ""
+            let contenu = contentTF.text ?? ""
+            self.note = Note(titre: titre, contenu: contenu, dateCrea: "", localisation: "")
+        }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

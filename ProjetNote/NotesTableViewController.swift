@@ -10,7 +10,7 @@ import UIKit
 class NotesTableViewController: UITableViewController {
     let dateFormatter=DateFormatter();
     var notes:[Note]=[
-        Note(titre: "Titre1", contenu: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", dateCrea: Date(), localisation: "Domblans"),Note(titre: "Titre2", contenu: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", dateCrea: Date(), localisation: "Domblans")
+        Note(titre: "Titre1", contenu: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", dateCrea: "", localisation: "Domblans"),Note(titre: "Titre2", contenu: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", dateCrea: "", localisation: "Domblans")
     ];
 
     override func viewDidLoad() {
@@ -55,6 +55,8 @@ class NotesTableViewController: UITableViewController {
         return true
     }
     */
+    
+    
 
     
     // Override to support editing the table view.
@@ -76,6 +78,27 @@ class NotesTableViewController: UITableViewController {
         notes.insert(movedNote,at: to.row)
         tableView.reloadData()
 
+    }
+    
+    @IBAction func unwindToNoteView(segue:UIStoryboardSegue){
+        print("unwind")
+        if segue.identifier == "saveUnwind"{
+            print("saveUnwind")
+            let sourceVC = segue.source as! AddEditTableViewController
+            if let note = sourceVC.note{
+                if let selectedIndexPath = tableView.indexPathForSelectedRow{
+                    // edit ici
+                    self.notes[selectedIndexPath.row]=note
+                    tableView.reloadData()
+                }
+                else{
+                    // insert
+                    let newIndexPath = IndexPath(row: self.notes.count, section: 0)
+                    self.notes.append(note)
+                    tableView.insertRows(at: [newIndexPath], with: .automatic)
+                }
+            }
+        }
     }
     
 

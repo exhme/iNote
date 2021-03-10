@@ -15,7 +15,7 @@
 		89B3639C25F6C49C00F37AEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89B3639A25F6C49C00F37AEC /* LaunchScreen.storyboard */; };
 		89B363A625F6C68C00F37AEC /* NotesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B363A525F6C68C00F37AEC /* NotesTableViewController.swift */; };
 		89B363A925F6C6BD00F37AEC /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B363A825F6C6BD00F37AEC /* Note.swift */; };
-		89B363AD25F6D0CC00F37AEC /* AddEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89B363AC25F6D0CC00F37AEC /* AddEditTableViewController.swift */; };
+		89EEA97925F9085A007765B3 /* AddEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EEA97825F9085A007765B3 /* AddEditTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +29,7 @@
 		89B3639D25F6C49C00F37AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89B363A525F6C68C00F37AEC /* NotesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesTableViewController.swift; sourceTree = "<group>"; };
 		89B363A825F6C6BD00F37AEC /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
-		89B363AC25F6D0CC00F37AEC /* AddEditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditTableViewController.swift; sourceTree = "<group>"; };
+		89EEA97825F9085A007765B3 /* AddEditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 		89B3638325F6C49B00F37AEC = {
 			isa = PBXGroup;
 			children = (
-				89B363AC25F6D0CC00F37AEC /* AddEditTableViewController.swift */,
+				89EEA97825F9085A007765B3 /* AddEditTableViewController.swift */,
 				89B3638E25F6C49B00F37AEC /* ProjetNote */,
 				89B3638D25F6C49B00F37AEC /* Products */,
 			);
@@ -146,7 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89B363AD25F6D0CC00F37AEC /* AddEditTableViewController.swift in Sources */,
+				89EEA97925F9085A007765B3 /* AddEditTableViewController.swift in Sources */,
 				89B363A925F6C6BD00F37AEC /* Note.swift in Sources */,
 				89B3639425F6C49B00F37AEC /* ViewController.swift in Sources */,
 				89B363A625F6C68C00F37AEC /* NotesTableViewController.swift in Sources */,

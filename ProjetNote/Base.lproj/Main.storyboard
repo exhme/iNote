@@ -109,15 +109,15 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Note" id="8AA-0V-X3D">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="225" id="g3r-gN-Ip7">
-                                        <rect key="frame" x="0.0" y="127.5" width="414" height="225"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="236" id="g3r-gN-Ip7">
+                                        <rect key="frame" x="0.0" y="127.5" width="414" height="236"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g3r-gN-Ip7" id="NSX-MP-6Aq">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="225"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="236"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" borderStyle="line" placeholder="Le contenu ici " minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RLh-ga-gfZ">
-                                                    <rect key="frame" x="20" y="11" width="374" height="203"/>
+                                                    <rect key="frame" x="20" y="11" width="374" height="214"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes"/>
@@ -130,7 +130,7 @@
                             <tableViewSection headerTitle="Localisation" id="rx0-LL-CTl">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="tDO-kY-5zq">
-                                        <rect key="frame" x="0.0" y="408.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="419.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tDO-kY-5zq" id="9f0-6v-pO5">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -146,8 +146,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Bhd-bF-qSF">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fgY-3k-BFP"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="nWG-kO-kGk"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fgY-3k-BFP">
+                            <connections>
+                                <segue destination="mLB-9a-tz8" kind="unwind" unwindAction="unwindToNoteViewWithSegue:" id="N7W-0X-gUx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="nWG-kO-kGk">
+                            <connections>
+                                <segue destination="mLB-9a-tz8" kind="unwind" identifier="saveUnwind" unwindAction="unwindToNoteViewWithSegue:" id="iYf-Et-2xo"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="contentTF" destination="RLh-ga-gfZ" id="GKg-yX-yId"/>
@@ -155,6 +163,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXJ-Co-IDi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="mLB-9a-tz8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4173.913043478261" y="124.55357142857142"/>
         </scene>

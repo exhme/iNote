@@ -10,9 +10,9 @@ import Foundation
 class Note {
     var titre:String
     var contenu:String
-    var dateCrea:Date
+    var dateCrea:String
     var localisation:String
-    init(titre:String,contenu:String,dateCrea:Date,localisation:String) {
+    init(titre:String,contenu:String,dateCrea:String,localisation:String) {
         self.titre=titre
         self.contenu=contenu
         self.dateCrea=dateCrea
