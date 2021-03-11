@@ -169,11 +169,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HXJ-Co-IDi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="Qfl-hh-jJK">
-                    <connections>
-                        <action selector="TapppedScreen:" destination="ohe-RP-B87" id="acy-LF-MKm"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <exit id="mLB-9a-tz8" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4173.8461538461534" y="124.40758293838861"/>
