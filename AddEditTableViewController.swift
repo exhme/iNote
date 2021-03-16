@@ -7,12 +7,14 @@
 
 import UIKit
 
-
+import MapKit
 
 
 class AddEditTableViewController: UITableViewController {
     @IBOutlet weak var titreTF: UITextField!
-    @IBOutlet weak var contentTF: UITextField!
+
+    @IBOutlet weak var contentTF: UITextView!
+    @IBOutlet weak var mapView: MKMapView!
     
     var note:Note?
     
