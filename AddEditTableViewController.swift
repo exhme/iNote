@@ -40,8 +40,13 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        buttonChange.isHidden=true
+        mapView.frame.size.height = 286
         if let note = note{
+            buttonChange.isHidden=false
+            mapView.frame.size.height = 237
+            
+            print("creation de la note dans partie edit ")
             
             titreTF.text=note.titre
             contentTF.text=note.contenu
@@ -55,6 +60,7 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
             
             
         }
+        
         
         print("view did load fini")
     }

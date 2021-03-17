@@ -145,7 +145,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LF8-6Y-fNh">
-                                                    <rect key="frame" x="0.0" y="59" width="390" height="227"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="237"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -153,7 +153,7 @@
                                                     </connections>
                                                 </mapView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qS-Mj-Pia">
-                                                    <rect key="frame" x="20" y="11" width="350" height="30"/>
+                                                    <rect key="frame" x="20" y="245" width="350" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" title="Cliquez ici pour modifier la localisation de la note"/>
                                                     <connections>
