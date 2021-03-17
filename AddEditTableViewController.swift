@@ -12,25 +12,17 @@ import MapKit
 
 class AddEditTableViewController: UITableViewController,CLLocationManagerDelegate,UITextViewDelegate , UITextFieldDelegate{
     @IBOutlet weak var titreTF: UITextField!
+    @IBOutlet weak var SaveButton: UIBarButtonItem!
+    @IBOutlet weak var contentTF: UITextView!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var buttonChange: UIButton!
     let managerLoc = CLLocationManager()
     var editContentTF:Bool = false
     var editTitleTF:Bool = false
     var editLocForVisibility:Bool = false
-    
-    @IBOutlet weak var SaveButton: UIBarButtonItem!
-    
-    @IBOutlet weak var contentTF: UITextView!
-    @IBOutlet weak var mapView: MKMapView!
-    
-    @IBOutlet weak var buttonChange: UIButton!
     var note:Note?
-    
-    
-    
     var titredebase : String = ""
     var contentDebase : String = ""
-    
-    
     var saveLoc:Bool = false
 
     func checkPourEnableButton(){
@@ -42,16 +34,12 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
                 SaveButton.isEnabled=false
             }
         }
-        
         else if (editContentTF && editTitleTF) || (editLocForVisibility) {
             SaveButton.isEnabled=true
         }
         else {
             SaveButton.isEnabled=false
         }
-        
-            
-        
     }
     
     
