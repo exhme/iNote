@@ -2,14 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationUsageDescription</key>
-	<string>l&apos;application veux utiliser la localisation</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>l&apos;application veux utiliser la localisation</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>l&apos;application veux utiliser la localisation</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Acceptez pour afficher votre localisation actuelle</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

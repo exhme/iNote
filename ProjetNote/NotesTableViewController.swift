@@ -8,13 +8,17 @@
 import UIKit
 import MapKit
 
-class NotesTableViewController: UITableViewController {
+class NotesTableViewController: UITableViewController{
+    
+    
+    
     var notes:[Note]=[
-        Note(titre: "Titre1", contenu: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", localisation: "Domblans"),Note(titre: "Titre2", contenu: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", localisation: "Domblans")
+        Note(titre: "Titre1", contenu: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", latitude: 46.75738137103216,longitude: 5.6031008137223),Note(titre: "Titre2", contenu: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",latitude: 46.75738137103216,longitude: 5.6031008137223)
     ];
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -92,8 +96,10 @@ class NotesTableViewController: UITableViewController {
             if let note = sourceVC.note{
                 if let selectedIndexPath = tableView.indexPathForSelectedRow{
                     // edit ici
+                    
                     note.dateCrea=Date()
                     self.notes[selectedIndexPath.row]=note
+                    
                     tableView.reloadData()
                 }
                 else{
