@@ -37,7 +37,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="notesCell" textLabel="tQq-R5-wkc" detailTextLabel="XCK-qd-hIf" style="IBUITableViewCellStyleSubtitle" id="pOb-yU-537">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="notesCell" textLabel="tQq-R5-wkc" detailTextLabel="XCK-qd-hIf" imageView="xop-iQ-Wuj" style="IBUITableViewCellStyleSubtitle" id="pOb-yU-537">
                                 <rect key="frame" x="0.0" y="28" width="390" height="55.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pOb-yU-537" id="N6H-xG-aOh">
@@ -45,19 +45,23 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tQq-R5-wkc">
-                                            <rect key="frame" x="20" y="8.9999999999999982" width="33" height="20.333333333333332"/>
+                                            <rect key="frame" x="94.333333333333314" y="8.9999999999999982" width="33" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XCK-qd-hIf">
-                                            <rect key="frame" x="19.999999999999996" y="31.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <rect key="frame" x="94.333333333333314" y="31.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="cici" id="xop-iQ-Wuj">
+                                            <rect key="frame" x="20" y="0.0" width="59.333333333333314" height="55.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -114,15 +118,15 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Note" id="8AA-0V-X3D">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="255" id="g3r-gN-Ip7">
-                                        <rect key="frame" x="0.0" y="140" width="390" height="255"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="163" id="g3r-gN-Ip7">
+                                        <rect key="frame" x="0.0" y="140" width="390" height="163"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g3r-gN-Ip7" id="NSX-MP-6Aq">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="255"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="163"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30Y-Nd-FbW">
-                                                    <rect key="frame" x="3" y="15" width="384" height="225"/>
+                                                    <rect key="frame" x="3" y="15" width="384" height="165"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <color key="textColor" systemColor="labelColor"/>
@@ -136,15 +140,15 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Localisation" footerTitle="" id="rx0-LL-CTl">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="237" id="tDO-kY-5zq">
-                                        <rect key="frame" x="0.0" y="451" width="390" height="237"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="186" id="tDO-kY-5zq">
+                                        <rect key="frame" x="0.0" y="359" width="390" height="186"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tDO-kY-5zq" id="9f0-6v-pO5">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="237"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="186"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LF8-6Y-fNh">
-                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="237"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="182"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <gestureRecognizers/>
                                                     <connections>
@@ -157,6 +161,44 @@
                                                     <state key="normal" image="location" catalog="system"/>
                                                     <connections>
                                                         <action selector="EditLoc:" destination="ohe-RP-B87" eventType="touchUpInside" id="h92-V3-R5H"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Photo" footerTitle="" id="Zti-tx-W1y">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="73" id="19z-jH-L8e">
+                                        <rect key="frame" x="0.0" y="601" width="390" height="73"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="19z-jH-L8e" id="4ma-Cc-LhQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="73"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2K-yn-AWz">
+                                                    <rect key="frame" x="20" y="11" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="cici"/>
+                                                    <connections>
+                                                        <action selector="SelectedImage1:" destination="ohe-RP-B87" eventType="touchUpInside" id="0II-lF-cwt"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoO-9K-dQu">
+                                                    <rect key="frame" x="161" y="9" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="cici2"/>
+                                                    <connections>
+                                                        <action selector="SelectedImage2:" destination="ohe-RP-B87" eventType="touchUpInside" id="eJ3-Bf-k2B"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZR-uZ-WWk">
+                                                    <rect key="frame" x="296" y="10" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" title="Button" image="malin"/>
+                                                    <connections>
+                                                        <action selector="SelectedImage3:" destination="ohe-RP-B87" eventType="touchUpInside" id="aE2-Np-ONG"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -185,6 +227,7 @@
                     <connections>
                         <outlet property="SaveButton" destination="nWG-kO-kGk" id="jSg-sj-bB9"/>
                         <outlet property="buttonChange" destination="3qS-Mj-Pia" id="5xI-eg-lar"/>
+                        <outlet property="buttonImage1" destination="L2K-yn-AWz" id="WVe-Uo-Ime"/>
                         <outlet property="contentTF" destination="30Y-Nd-FbW" id="NyY-TS-f2c"/>
                         <outlet property="mapView" destination="LF8-6Y-fNh" id="twD-Vr-NC6"/>
                         <outlet property="titreTF" destination="AA6-mZ-AzJ" id="eca-Yp-jFY"/>
@@ -241,7 +284,10 @@
         <segue reference="dbH-Ra-NAZ"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="cici" width="1088" height="1030"/>
+        <image name="cici2" width="374" height="374"/>
         <image name="location" catalog="system" width="128" height="121"/>
+        <image name="malin" width="1368" height="1016"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

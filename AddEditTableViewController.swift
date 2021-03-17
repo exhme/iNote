@@ -16,7 +16,10 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
     @IBOutlet weak var contentTF: UITextView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var buttonChange: UIButton!
+    @IBOutlet weak var buttonImage1: UIButton!
     let managerLoc = CLLocationManager()
+    @IBOutlet weak var buttonImage2: UIButton!
+    @IBOutlet weak var buttonImage3: UIButton!
     var editContentTF:Bool = false
     var editTitleTF:Bool = false
     var editLocForVisibility:Bool = false
@@ -24,17 +27,19 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
     var titredebase : String = ""
     var contentDebase : String = ""
     var saveLoc:Bool = false
+    var selectedImage = -1
+    
 
     func checkPourEnableButton(){
         if note != nil{
-            if (editContentTF || editTitleTF) || (editLocForVisibility) {
+            if (editContentTF || editTitleTF) || (editLocForVisibility) || (selectedImage != -1){
                 SaveButton.isEnabled=true
             }
             else {
                 SaveButton.isEnabled=false
             }
         }
-        else if (editContentTF && editTitleTF) || (editLocForVisibility) {
+        else if (editContentTF && editTitleTF && (selectedImage != -1)) || (editLocForVisibility) {
             SaveButton.isEnabled=true
         }
         else {
@@ -46,6 +51,7 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
     @IBAction func EditLoc(_ sender: UIButton) {
         editLocForVisibility = true
         checkPourEnableButton()
+        selectedImage = note!.image
         
         print("clique sur le button modfier")
         self.saveLoc = true
@@ -76,7 +82,7 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
         contentTF.textColor = UIColor.lightGray
         
         buttonChange.isHidden=true
-        mapView.frame.size.height = 286
+        
         if let note = note{
             titredebase = note.titre
             contentDebase = note.contenu
@@ -158,8 +164,38 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
         
     }
     
+    // MARK: - selection photo
+    
+    
+    @IBAction func SelectedImage1(_ sender: UIButton) {
+        selectedImage = 0
+        sender.layer.borderWidth=1
+        sender.layer.borderColor = UIColor.blue.cgColor
+        checkPourEnableButton()
+        
+    }
+    
+    @IBAction func SelectedImage2(_ sender: UIButton) {
+        selectedImage = 1
+        
+            sender.layer.borderWidth=1
+            sender.layer.borderColor = UIColor.blue.cgColor
+        checkPourEnableButton()
+    }
+    
+    @IBAction func SelectedImage3(_ sender: UIButton) {
+        selectedImage = 2
+        
+            sender.layer.borderWidth=1
+            sender.layer.borderColor = UIColor.blue.cgColor
+        checkPourEnableButton()
+    }
+    
+    
     
     // MARK: - detection edition
+    
+    
     
     func textViewDidChange(_ textView: UITextView){
         if textView.textColor == UIColor.lightGray {
@@ -212,7 +248,7 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 4
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -291,13 +327,13 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
             longitudeAdd = coordForAdd.longitude
             latitudeAdd = coordForAdd.latitude
             if note != nil && saveLoc == false{
-                print("dans le if chelou")
+                print("dans le if saveLoc prepare")
                 longitudeAdd = (note?.localisation.longitude)!
                 latitudeAdd = (note?.localisation.latitude)!
                 
                 
             }
-            self.note = Note(titre: titre, contenu: contenu ,latitude: latitudeAdd,longitude: longitudeAdd)
+            self.note = Note(titre: titre, contenu: contenu ,latitude: latitudeAdd,longitude: longitudeAdd, image: selectedImage)
         }
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.

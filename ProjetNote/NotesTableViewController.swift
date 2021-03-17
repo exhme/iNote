@@ -11,9 +11,10 @@ import MapKit
 class NotesTableViewController: UITableViewController{
     
     
+    let myImage: [UIImage] = [UIImage(named: "cici.jpg")!,UIImage(named: "cici2.jpg")!,UIImage(named: "malin.jpg")!];
     
     var notes:[Note]=[
-        Note(titre: "Titre1", contenu: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", latitude: 51.50998,longitude: -0.1),Note(titre: "Titre2", contenu: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",latitude: 51.50998,longitude: -0.1)
+        Note(titre: "Titre1", contenu: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", latitude: 51.50998,longitude: -0.1,image:0),Note(titre: "Titre2", contenu: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",latitude: 51.50998,longitude: -0.1,image:1)
     ];
 
     override func viewDidLoad() {
@@ -50,9 +51,16 @@ class NotesTableViewController: UITableViewController{
         french.dateStyle = .medium
         french.timeStyle = .medium
         french.locale = Locale(identifier: "FR-fr")
+        
+        
+        
         cell.textLabel?.text = note.titre
         cell.detailTextLabel?.text=french.string(from: notes[indexPath.row].dateCrea)
-        return cell
+        cell.imageView?.frame = CGRect(x:0.0,y:0.0,width: 10, height: 10)
+
+        cell.imageView?.image=myImage[note.image]
+        
+                return cell
     }
     
 
