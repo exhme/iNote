@@ -10,19 +10,41 @@ import CoreLocation
 import MapKit
 
 
-class AddEditTableViewController: UITableViewController,CLLocationManagerDelegate {
+class AddEditTableViewController: UITableViewController,CLLocationManagerDelegate,UITextViewDelegate , UITextFieldDelegate{
     @IBOutlet weak var titreTF: UITextField!
     let managerLoc = CLLocationManager()
+    var editContentTF:Bool = false
+    var editTitleTF:Bool = false
+    var editLocForVisibility:Bool = false
+    
+    @IBOutlet weak var SaveButton: UIBarButtonItem!
     
     @IBOutlet weak var contentTF: UITextView!
     @IBOutlet weak var mapView: MKMapView!
     
     @IBOutlet weak var buttonChange: UIButton!
     var note:Note?
+    
     var saveLoc:Bool = false
 
-
+    func checkPourEnableButton(){
+        if note != nil{
+            if (editContentTF || editTitleTF) || (editLocForVisibility) {
+                SaveButton.isEnabled=true
+            }
+        }
+        else{
+            if (editContentTF && editTitleTF) || (editLocForVisibility) {
+                SaveButton.isEnabled=true
+            }
+        }
+    }
+    
+    
     @IBAction func EditLoc(_ sender: UIButton) {
+        editLocForVisibility = true
+        checkPourEnableButton()
+        
         print("clique sur le button modfier")
         self.saveLoc = true
         print(self.saveLoc)
@@ -37,13 +59,24 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
     }
     
     
+    
+    
     override func viewDidLoad() {
+        SaveButton.isEnabled = false
+        titreTF.delegate=self
+        contentTF.delegate=self
         super.viewDidLoad()
+        contentTF.layer.borderWidth = 1
+        contentTF.layer.borderColor = UIColor.black.cgColor
+        contentTF.text = "Entrer votre note ici"
+        
+        contentTF.textColor = UIColor.lightGray
         
         buttonChange.isHidden=true
         mapView.frame.size.height = 286
         if let note = note{
             buttonChange.isHidden=false
+            contentTF.textColor = UIColor.black
             
             print("creation de la note dans partie edit ")
             
@@ -59,7 +92,7 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
             
             
         }
-        
+        // MARK: - view did appear
         
         print("view did load fini")
     }
@@ -73,6 +106,10 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
             managerLoc.startUpdatingLocation()
             return
             
+            
+            
+            // MARK: - loc
+        
         }
         if self.saveLoc == true {
             
@@ -115,7 +152,25 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
         
     }
     
+    
+    // MARK: - detection edition
+    
+    func textViewDidChange(_ textView: UITextView){
+        editContentTF=true
         
+        if textView.textColor == UIColor.lightGray {
+                textView.text = nil
+                textView.textColor = UIColor.black
+            }
+        print("contentTF a été edit")
+        checkPourEnableButton()
+        
+    }
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        editTitleTF = true
+        print("le titre tf a ete Edit")
+        checkPourEnableButton()
+    }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

@@ -94,18 +94,18 @@
                         <sections>
                             <tableViewSection headerTitle="Titre" id="gnN-yg-u2Y">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Tev-zF-Yd7">
-                                        <rect key="frame" x="0.0" y="28" width="390" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="56" id="Tev-zF-Yd7">
+                                        <rect key="frame" x="0.0" y="28" width="390" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tev-zF-Yd7" id="GSf-4o-cGl">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AA6-mZ-AzJ">
-                                                    <rect key="frame" x="8" y="4" width="374" height="34"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AA6-mZ-AzJ">
+                                                    <rect key="frame" x="8" y="11" width="374" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="next"/>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -114,34 +114,33 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Note" id="8AA-0V-X3D">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="188" id="g3r-gN-Ip7">
-                                        <rect key="frame" x="0.0" y="127.5" width="390" height="188"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="255" id="g3r-gN-Ip7">
+                                        <rect key="frame" x="0.0" y="140" width="390" height="255"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g3r-gN-Ip7" id="NSX-MP-6Aq">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="188"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="255"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="30Y-Nd-FbW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="390" height="236"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30Y-Nd-FbW">
+                                                    <rect key="frame" x="3" y="15" width="384" height="225"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" smartInsertDeleteType="yes"/>
                                                 </textView>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Localisation" id="rx0-LL-CTl">
+                            <tableViewSection headerTitle="Localisation" footerTitle="" id="rx0-LL-CTl">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="286" id="tDO-kY-5zq">
-                                        <rect key="frame" x="0.0" y="371.5" width="390" height="286"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="237" id="tDO-kY-5zq">
+                                        <rect key="frame" x="0.0" y="451" width="390" height="237"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tDO-kY-5zq" id="9f0-6v-pO5">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="286"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="237"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LF8-6Y-fNh">
@@ -184,6 +183,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="SaveButton" destination="nWG-kO-kGk" id="jSg-sj-bB9"/>
                         <outlet property="buttonChange" destination="3qS-Mj-Pia" id="5xI-eg-lar"/>
                         <outlet property="contentTF" destination="30Y-Nd-FbW" id="NyY-TS-f2c"/>
                         <outlet property="mapView" destination="LF8-6Y-fNh" id="twD-Vr-NC6"/>
