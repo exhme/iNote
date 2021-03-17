@@ -102,7 +102,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AA6-mZ-AzJ">
-                                                    <rect key="frame" x="20" y="4" width="374" height="34"/>
+                                                    <rect key="frame" x="8" y="4" width="374" height="34"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -152,10 +152,10 @@
                                                         <outletCollection property="gestureRecognizers" destination="SYI-JX-WkU" appends="YES" id="ds4-S0-Mnc"/>
                                                     </connections>
                                                 </mapView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qS-Mj-Pia">
-                                                    <rect key="frame" x="20" y="245" width="350" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3qS-Mj-Pia">
+                                                    <rect key="frame" x="340" y="11" width="38" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Cliquez ici pour modifier la localisation de la note"/>
+                                                    <state key="normal" image="location" catalog="system"/>
                                                     <connections>
                                                         <action selector="EditLoc:" destination="ohe-RP-B87" eventType="touchUpInside" id="h92-V3-R5H"/>
                                                     </connections>
@@ -241,6 +241,7 @@
         <segue reference="dbH-Ra-NAZ"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="location" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

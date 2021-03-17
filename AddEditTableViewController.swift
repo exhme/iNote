@@ -44,7 +44,6 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
         mapView.frame.size.height = 286
         if let note = note{
             buttonChange.isHidden=false
-            mapView.frame.size.height = 237
             
             print("creation de la note dans partie edit ")
             
@@ -215,11 +214,6 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
                 
                 
             }
-            
-            
-            
-            
-            
             self.note = Note(titre: titre, contenu: contenu ,latitude: latitudeAdd,longitude: longitudeAdd)
         }
         // Get the new view controller using segue.destination.
