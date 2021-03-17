@@ -25,6 +25,12 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
     @IBOutlet weak var buttonChange: UIButton!
     var note:Note?
     
+    
+    
+    var titredebase : String = ""
+    var contentDebase : String = ""
+    
+    
     var saveLoc:Bool = false
 
     func checkPourEnableButton(){
@@ -32,12 +38,20 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
             if (editContentTF || editTitleTF) || (editLocForVisibility) {
                 SaveButton.isEnabled=true
             }
-        }
-        else{
-            if (editContentTF && editTitleTF) || (editLocForVisibility) {
-                SaveButton.isEnabled=true
+            else {
+                SaveButton.isEnabled=false
             }
         }
+        
+        else if (editContentTF && editTitleTF) || (editLocForVisibility) {
+            SaveButton.isEnabled=true
+        }
+        else {
+            SaveButton.isEnabled=false
+        }
+        
+            
+        
     }
     
     
@@ -68,13 +82,17 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
         super.viewDidLoad()
         contentTF.layer.borderWidth = 1
         contentTF.layer.borderColor = UIColor.black.cgColor
-        contentTF.text = "Entrer votre note ici"
+        contentTF.text = "Entrez votre note ici"
+        
         
         contentTF.textColor = UIColor.lightGray
         
         buttonChange.isHidden=true
         mapView.frame.size.height = 286
         if let note = note{
+            titredebase = note.titre
+            contentDebase = note.contenu
+            print(titredebase)
             buttonChange.isHidden=false
             contentTF.textColor = UIColor.black
             
@@ -156,21 +174,43 @@ class AddEditTableViewController: UITableViewController,CLLocationManagerDelegat
     // MARK: - detection edition
     
     func textViewDidChange(_ textView: UITextView){
-        editContentTF=true
-        
         if textView.textColor == UIColor.lightGray {
                 textView.text = nil
                 textView.textColor = UIColor.black
             }
-        print("contentTF a été edit")
+        if contentTF.text != contentDebase {
+            editContentTF = true
+            print("le content tf a ete Edit")
+            
+        }
+        else{
+            print("passe dans le content else")
+            editContentTF = false
+            
+        }
         checkPourEnableButton()
         
     }
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        editTitleTF = true
-        print("le titre tf a ete Edit")
+        if titreTF.text != titredebase {
+            editTitleTF = true
+            print("le titre tf a ete Edit")
+            
+        }
+        else{
+            print("passe dans le else")
+            editTitleTF = false
+            
+        }
         checkPourEnableButton()
+        
+        
+        
+        
+        
     }
+    
+    
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
